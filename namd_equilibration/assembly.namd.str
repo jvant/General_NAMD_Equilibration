@@ -1,6 +1,6 @@
  set boxtype  rect
- set a        87
- set b        97
- set c        97
+ set a        85
+ set b        100
+ set c        84
  set zcen     21
 

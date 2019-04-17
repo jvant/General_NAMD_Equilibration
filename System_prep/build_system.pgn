@@ -35,15 +35,15 @@ mol new $mypdb
 pdbalias residue HIS HSD
 pdbalias residue MSE MET
 pdbalias atom ILE CD1 CD
-
+pdbalias residue HOH TIP3
 
 ##############################################################
 # Get chains and write corresponding pdbs
-set selchains [atomselect top "all"]
+set selchains [atomselect top "chain A to C"]
 set chains [lsort -unique [$selchains get chain]]
 
 foreach i $chains {
-    set selchain [atomselect top "chain $i"]
+    set selchain [atomselect top "chain $i and not water"]
     $selchain writepdb chain$i.pdb
 }
 
@@ -73,10 +73,13 @@ solvate Tmp.psf Tmp.pdb -t 15 -o Tmp_solv
 #Ionize
 set mypdb [string trim $mypdb .pdb]
 
-autoionize -psf Tmp_solv.psf -pdb Tmp_solv.pdb -neutralize -o ls ../namd_equilibration/$mypdb-solv_ion
+package require autoionize
+autoionize -psf Tmp_solv.psf -pdb Tmp_solv.pdb -neutralize -o ../namd_equilibration/$mypdb-solv_ion
 resetpsf
 
 
 ##############################################################
 # Delete temporary files
-file delete Tmp_solv.psf Tmp_solv.pdb Tmp.pdb Tmp.psf Tmp_solv.log
+file delete Tmp_solv.psf Tmp_solv.pdb Tmp.pdb Tmp.psf Tmp_solv.log chain*.pdb
+
+exit
