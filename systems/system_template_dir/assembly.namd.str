@@ -1,0 +1,8 @@
+ set boxtype  rect
+ set a        A
+ set b        B
+ set c        C
+ set xcen     XCEN
+ set ycen     YCEN
+ set zcen     ZCEN
+
