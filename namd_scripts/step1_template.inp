@@ -21,4 +21,4 @@ set TS 		   0
 # Remove if not first step
 firsttimestep      0
 
-source run.inp
+source ../../namd_scripts/run.inp

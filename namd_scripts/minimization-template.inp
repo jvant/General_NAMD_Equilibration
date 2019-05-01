@@ -16,4 +16,4 @@ set outputname     step.$stepnum\_equilibration;
 set MS 		   10000
 set TS 		   10000
 
-source run.inp
+source ../../namd_scripts/run.inp
