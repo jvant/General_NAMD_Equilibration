@@ -1,0 +1,17 @@
+#############################################################
+## JOB DESCRIPTION                                         ##
+#############################################################
+
+# Equilibrate for 100 ps
+
+#############################################################
+## ADJUSTABLE PARAMETERS                                   ##
+#############################################################
+set myfile         3hpj-solv_ion
+
+set temp           303.15;
+set stepnum        22
+set outputname     step$stepnum\_equilibration;
+set TS		   100000
+
+source ../../namd_scripts/run.inp

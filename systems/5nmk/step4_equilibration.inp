@@ -1,0 +1,19 @@
+#############################################################
+## JOB DESCRIPTION                                         ##
+#############################################################
+
+# Minimize 10 ps then equilibrate for 10 ps
+
+
+#############################################################
+## ADJUSTABLE PARAMETERS                                   ##
+#############################################################
+set myfile         5nmk-solv_ion
+
+set temp           303.15;
+set stepnum        4
+set outputname     step$stepnum\_equilibration;
+set MS 		   10000
+set TS 		   10000
+
+source ../../namd_scripts/run.inp
