@@ -12,7 +12,7 @@ set myfile         5nmk-solv_ion
 
 set temp           303.15;
 set stepnum        1
-set outputname     step.$stepnum\_equilibration;
+set outputname     step$stepnum\_equilibration;
 
 temperature	   $temp
 set MS 		   100000
@@ -21,4 +21,4 @@ set TS 		   0
 # Remove if not first step
 firsttimestep      0
 
-source run.inp
+source ../../namd_scripts/run.inp
